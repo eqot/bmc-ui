@@ -1,4 +1,4 @@
-Polymer 'polymer-base',
+Polymer 'bmc-ui',
 
   ready: ->
     console.log 'ok'
