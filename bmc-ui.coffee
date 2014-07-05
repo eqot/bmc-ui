@@ -1,8 +1,14 @@
 Polymer 'bmc-ui',
 
-  ready: ->
+  CELL_IDS: ['kp', 'ka', 'kr', 'vp', 'cr', 'ch', 'cs', 'co', 'rs']
+
+  domReady: ->
     @resize()
     window.onresize = @resize.bind(@)
+
+    for id in @CELL_IDS
+      element = @$[id]
+      element.onclick = @click.bind(@)
 
   resize: ->
     width = document.body.clientWidth
@@ -41,3 +47,6 @@ Polymer 'bmc-ui',
       style.height = heightBottom + 'px'
       style.top = heightTop + 'px'
       style.left = widthBottom * i + 'px'
+
+  click: (event) ->
+    console.log event
